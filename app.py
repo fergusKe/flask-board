@@ -10,4 +10,4 @@ def posts(id):
   return '文章編號是: %s' % id
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
