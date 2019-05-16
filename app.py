@@ -1,13 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-  return 'Hello World!'
+def index():
+  return render_template('index.html')
 
 @app.route('/posts/<id>')
 def posts(id):
-  return '文章編號是: %s' % id
+  return render_template('posts.html', id=id)
 
 if __name__ == '__main__':
   app.run(debug=True)
